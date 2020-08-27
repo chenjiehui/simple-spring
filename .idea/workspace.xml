@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a6dc4074-6973-4841-a8aa-9e4036f3cd99" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simple-spring.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/beans/BeanDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/beans/factory/BeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/beans/factory/support/DefaultBeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/beans/factory/support/GenericBeanDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/core/io/ClassPathResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/core/io/FileSystemResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/core/io/Resource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/service/v1/PetStoreService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/utils/Assert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/utils/ClassUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/petstore-v1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/simple/spring/BeanFactoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/simple/spring/beans/BeanDefinition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/simple/spring/beans/factory/BeanFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/simple/spring/beans/factory/support/DefaultBeanFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/simple/spring/service/v1/PetStoreService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/petstore-v1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/simple/spring/BeanFactoryTest.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Tag Library Descriptor" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$USER_HOME$/Java/software/apache-maven-3.6.3/repository" />
+        <option name="mavenHome" value="$USER_HOME$/Java/software/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="$USER_HOME$/Java/software/apache-maven-3.6.3/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+  </component>
+  <component name="ProjectId" id="1fAWR8JwiVid9cPUh37xslVvlRl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.simple.spring" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/simple/spring/core/io" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.simple.spring.utils" />
+      <recent name="com.simple.spring.core.io" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.simple.spring.beans" />
+      <recent name="com.simple.spring.beans.factory.support" />
+      <recent name="com.simple.spring.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.BeanFactoryTest.testGetBean">
+    <configuration name="BeanFactoryTest.testGetBean" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simple-spring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.simple.spring.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.simple.spring" />
+      <option name="MAIN_CLASS_NAME" value="com.simple.spring.BeanFactoryTest" />
+      <option name="METHOD_NAME" value="testGetBean" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BeanFactoryTest.testGetBeanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simple-spring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.simple.spring.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.simple.spring" />
+      <option name="MAIN_CLASS_NAME" value="com.simple.spring.BeanFactoryTest" />
+      <option name="METHOD_NAME" value="testGetBeanTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="simple-spring" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="simple-spring" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BeanFactoryTest.testGetBean" />
+        <item itemvalue="JUnit.BeanFactoryTest.testGetBeanTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6dc4074-6973-4841-a8aa-9e4036f3cd99" name="Default Changelist" comment="" />
+      <created>1595661366578</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595661366578</updated>
+      <workItem from="1595661370946" duration="2807000" />
+      <workItem from="1596944960280" duration="3090000" />
+      <workItem from="1598193314810" duration="1274000" />
+      <workItem from="1598536207281" duration="4751000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-191" y="-980" width="1720" height="880" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1598543120909">
+      <screen x="-291" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="-191" y="-980" width="1720" height="880" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1280.800/-291.-1080.1920.1080@-291.-1080.1920.1080" timestamp="1598543120909" />
+    <state x="453" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1595663414682">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="453" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1595663414682" />
+    <state x="88" y="332" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1595662650149">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="88" y="332" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1280.800@0.0.1280.800" timestamp="1595662650149" />
+    <state x="341" y="265" width="604" height="279" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1595663005264">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="341" y="265" width="604" height="279" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.800@0.0.1280.800" timestamp="1595663005264" />
+    <state x="372" y="286" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1595662651894">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="372" y="286" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1280.800@0.0.1280.800" timestamp="1595662651894" />
+    <state width="1878" height="302" key="GridCell.Tab.0.bottom" timestamp="1598543123955">
+      <screen x="-291" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1238" height="211" key="GridCell.Tab.0.bottom/0.0.1280.800/-275.-1080.1920.1080@0.0.1280.800" timestamp="1598235006788" />
+    <state width="1878" height="302" key="GridCell.Tab.0.bottom/0.0.1280.800/-291.-1080.1920.1080@-291.-1080.1920.1080" timestamp="1598543123955" />
+    <state width="1280" height="218" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1597975970285" />
+    <state width="1878" height="302" key="GridCell.Tab.0.center" timestamp="1598543123952">
+      <screen x="-291" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1238" height="211" key="GridCell.Tab.0.center/0.0.1280.800/-275.-1080.1920.1080@0.0.1280.800" timestamp="1598235006786" />
+    <state width="1878" height="302" key="GridCell.Tab.0.center/0.0.1280.800/-291.-1080.1920.1080@-291.-1080.1920.1080" timestamp="1598543123952" />
+    <state width="1280" height="218" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1597975970282" />
+    <state width="1878" height="302" key="GridCell.Tab.0.left" timestamp="1598543123950">
+      <screen x="-291" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1238" height="211" key="GridCell.Tab.0.left/0.0.1280.800/-275.-1080.1920.1080@0.0.1280.800" timestamp="1598235006784" />
+    <state width="1878" height="302" key="GridCell.Tab.0.left/0.0.1280.800/-291.-1080.1920.1080@-291.-1080.1920.1080" timestamp="1598543123950" />
+    <state width="1280" height="218" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1597975970281" />
+    <state width="1878" height="302" key="GridCell.Tab.0.right" timestamp="1598543123954">
+      <screen x="-291" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1238" height="211" key="GridCell.Tab.0.right/0.0.1280.800/-275.-1080.1920.1080@0.0.1280.800" timestamp="1598235006787" />
+    <state width="1878" height="302" key="GridCell.Tab.0.right/0.0.1280.800/-291.-1080.1920.1080@-291.-1080.1920.1080" timestamp="1598543123954" />
+    <state width="1280" height="218" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1597975970283" />
+    <state width="1878" height="375" key="GridCell.Tab.1.bottom" timestamp="1598542956173">
+      <screen x="-291" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="375" key="GridCell.Tab.1.bottom/0.0.1280.800/-291.-1080.1920.1080@-291.-1080.1920.1080" timestamp="1598542956173" />
+    <state width="1878" height="375" key="GridCell.Tab.1.center" timestamp="1598542956167">
+      <screen x="-291" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="375" key="GridCell.Tab.1.center/0.0.1280.800/-291.-1080.1920.1080@-291.-1080.1920.1080" timestamp="1598542956167" />
+    <state width="1878" height="375" key="GridCell.Tab.1.left" timestamp="1598542956165">
+      <screen x="-291" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="375" key="GridCell.Tab.1.left/0.0.1280.800/-291.-1080.1920.1080@-291.-1080.1920.1080" timestamp="1598542956165" />
+    <state width="1878" height="375" key="GridCell.Tab.1.right" timestamp="1598542956171">
+      <screen x="-291" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="375" key="GridCell.Tab.1.right/0.0.1280.800/-291.-1080.1920.1080@-291.-1080.1920.1080" timestamp="1598542956171" />
+    <state x="-34" y="-1027" key="SettingsEditor" timestamp="1598539045871">
+      <screen x="-291" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="-34" y="-1027" key="SettingsEditor/0.0.1280.800/-291.-1080.1920.1080@-291.-1080.1920.1080" timestamp="1598539045871" />
+    <state x="171" y="39" key="SettingsEditor/0.0.1280.800/-291.-1080.1920.1080@0.0.1280.800" timestamp="1598193722207" />
+    <state width="750" height="601" key="SwitcherDM" timestamp="1598542765366">
+      <screen x="-291" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="750" height="601" key="SwitcherDM/0.0.1280.800/-291.-1080.1920.1080@-291.-1080.1920.1080" timestamp="1598542765366" />
+    <state width="500" height="445" key="SwitcherDM/0.0.1280.800@0.0.1280.800" timestamp="1595663403294" />
+    <state x="196" y="-797" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1598542939657">
+      <screen x="-291" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="196" y="-797" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.800/-291.-1080.1920.1080@-291.-1080.1920.1080" timestamp="1598542939657" />
+    <state x="310" y="-788" width="717" height="496" key="find.popup" timestamp="1598537319240">
+      <screen x="-291" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="310" y="-788" width="717" height="496" key="find.popup/0.0.1280.800/-291.-1080.1920.1080@-291.-1080.1920.1080" timestamp="1598537319240" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1596945369381">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1596945369381" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="java-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
