@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6dc4074-6973-4841-a8aa-9e4036f3cd99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simple-spring.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/beans/BeanDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/beans/factory/BeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/beans/factory/support/DefaultBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/beans/factory/support/GenericBeanDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/core/io/ClassPathResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/core/io/FileSystemResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/core/io/Resource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/service/v1/PetStoreService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/utils/Assert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/simple/spring/utils/ClassUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/petstore-v1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/simple/spring/BeanFactoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/simple/spring/beans/BeanDefinition.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/simple/spring/beans/factory/BeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/simple/spring/beans/factory/support/DefaultBeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/simple/spring/service/v1/PetStoreService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/petstore-v1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/simple/spring/BeanFactoryTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +183,7 @@
       <workItem from="1596944960280" duration="3090000" />
       <workItem from="1598193314810" duration="1274000" />
       <workItem from="1598536207281" duration="4751000" />
+      <workItem from="1598543263155" duration="329000" />
     </task>
     <servers />
   </component>
