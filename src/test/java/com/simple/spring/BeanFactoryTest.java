@@ -5,6 +5,7 @@ import com.simple.spring.beans.factory.BeanCreationException;
 import com.simple.spring.beans.factory.BeanDefinitionStoreException;
 import com.simple.spring.beans.factory.support.DefaultBeanFactory;
 import com.simple.spring.beans.factory.xml.XmlBeanDefinitionReader;
+import com.simple.spring.core.io.ClassPathResource;
 import com.simple.spring.service.v1.PetStoreService;
 import org.junit.Assert;
 import org.junit.Before;
@@ -27,8 +28,14 @@ public class BeanFactoryTest  {
 
     @Test
     public void testGetBean(){
-        reader.loadBeanDefinitions("petstore-v1.xml");
+        reader.loadBeanDefinitions(new ClassPathResource("petstore-v1.xml"));
         BeanDefinition bd = factory.getBeanDefinition("petStore");
+
+        assertTrue(bd.isSingleton());
+
+        assertFalse(bd.isPrototype());
+
+        assertEquals(BeanDefinition.SCOPE_DEFAULT, bd.getScope());
 
         assertEquals("com.simple.spring.service.v1.PetStoreService", bd.getBeanClassName());
 
@@ -39,7 +46,7 @@ public class BeanFactoryTest  {
 
     @Test
     public void testInvalidBean() {
-        reader.loadBeanDefinitions("petstore-v1.xml");
+        reader.loadBeanDefinitions(new ClassPathResource("petstore-v1.xml"));
         try{
             factory.getBean("invalidBean");
         } catch (BeanCreationException e) {
@@ -52,7 +59,7 @@ public class BeanFactoryTest  {
     @Test
     public void testInvalidXML() {
          try {
-             reader.loadBeanDefinitions("xxx-v1.xml");
+             reader.loadBeanDefinitions(new ClassPathResource("123-v1.xml"));
          } catch (BeanDefinitionStoreException e) {
              return;
          }

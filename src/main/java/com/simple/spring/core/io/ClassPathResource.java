@@ -27,8 +27,8 @@ public class ClassPathResource implements Resource {
 			throw new FileNotFoundException(path + " cannot be opened");
 		}
 		return is;
-		
 	}
+
 	public String getDescription(){
 		return this.path;
 	}

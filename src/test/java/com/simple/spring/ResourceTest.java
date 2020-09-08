@@ -1,25 +1,24 @@
-package org.litespring.test.v1;
+package com.simple.spring;
 
-import java.io.InputStream;
-
+import com.simple.spring.core.io.ClassPathResource;
+import com.simple.spring.core.io.Resource;
 import org.junit.Assert;
 import org.junit.Test;
-import org.litespring.core.io.ClassPathResource;
-import org.litespring.core.io.FileSystemResource;
-import org.litespring.core.io.Resource;
+
+import java.io.InputStream;
 
 public class ResourceTest {
 
 	@Test
 	public void testClassPathResource() throws Exception {
 
-		Resource r = new ClassPathResource("petstore-v1.xml");
+		Resource resource = new ClassPathResource("petstore-v1.xml");
 
 		InputStream is = null;
 
 		try {
-			is = r.getInputStream();
-			// 注意：这个测试其实并不充分！！
+			is = resource. getInputStream();
+			// TODO 此处测试不充分
 			Assert.assertNotNull(is);
 		} finally {
 			if (is != null) {
@@ -38,7 +37,7 @@ public class ResourceTest {
 
 		try {
 			is = r.getInputStream();
-			// 注意：这个测试其实并不充分！！
+			// TODO 此处并不充分
 			Assert.assertNotNull(is);
 		} finally {
 			if (is != null) {

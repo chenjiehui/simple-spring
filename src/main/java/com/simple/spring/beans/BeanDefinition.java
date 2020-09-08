@@ -5,5 +5,15 @@ package com.simple.spring.beans;
  */
 public interface BeanDefinition {
 
+    String SCOPE_SINGLETON = "singleton";
+    String SCOPE_PROTOTYPE = "prototype";
+    String SCOPE_DEFAULT = "";
+
+    boolean isSingleton();
+    boolean isPrototype();
+
+    String getScope();
+    void setScope(String attributeValue);
+
     String getBeanClassName();
 }
