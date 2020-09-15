@@ -1,4 +1,4 @@
-package com.simple.spring;
+package com.simple.spring.v1;
 
 import com.simple.spring.beans.BeanDefinition;
 import com.simple.spring.beans.factory.BeanCreationException;

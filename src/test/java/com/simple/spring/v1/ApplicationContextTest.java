@@ -1,4 +1,4 @@
-package com.simple.spring;
+package com.simple.spring.v1;
 
 import com.simple.spring.context.ApplicationContext;
 import com.simple.spring.context.support.ClassPathXmlApplicationContext;

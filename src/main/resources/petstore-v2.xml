@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+  
+  <bean id="petStore" class="com.simple.spring.service.v2.PetStoreService" >
+   
+  	<property name="accountDao" ref="accountDao"/>
+    <property name="itemDao" ref="itemDao"/>
+    <property name="owner" value="cjh"/>
+    <property name="version"  value="2"/>
+    
+  </bean> 
+  
+ <bean id="accountDao"  class="com.simple.spring.dao.v2.AccountDao">
+  </bean>
+
+  <bean id="itemDao" class="com.simple.spring.dao.v2.ItemDao">
+  </bean>
+
+</beans>
+
