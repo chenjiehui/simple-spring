@@ -10,10 +10,10 @@
     
   </bean> 
   
- <bean id="accountDao"  class="com.simple.spring.dao.v2.AccountDao">
+ <bean id="accountDao"  class="com.simple.spring.dao.AccountDao">
   </bean>
 
-  <bean id="itemDao" class="com.simple.spring.dao.v2.ItemDao">
+  <bean id="itemDao" class="com.simple.spring.dao.ItemDao">
   </bean>
 
 </beans>

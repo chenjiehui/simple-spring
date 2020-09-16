@@ -108,8 +108,8 @@ public class XmlBeanDefinitionReader {
                 "<constructor-arg> element";
 
 
-        boolean hasRefAttribute = (ele.attribute(REF_ATTRIBUTE)!=null);
-        boolean hasValueAttribute = (ele.attribute(VALUE_ATTRIBUTE) !=null);
+        boolean hasRefAttribute = (ele.attribute(REF_ATTRIBUTE) != null);
+        boolean hasValueAttribute = (ele.attribute(VALUE_ATTRIBUTE) != null);
 
         if (hasRefAttribute) {
             String refName = ele.attributeValue(REF_ATTRIBUTE);
@@ -124,7 +124,6 @@ public class XmlBeanDefinitionReader {
             return valueHolder;
         }
         else {
-
             throw new RuntimeException(elementName + " must specify a ref or value");
         }
     }
