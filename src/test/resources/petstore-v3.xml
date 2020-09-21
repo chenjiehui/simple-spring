@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	
+  <bean id="petStore" class="com.simple.spring.service.v3.PetStoreService" >
+   	<constructor-arg  ref="accountDao"/>
+   	<constructor-arg  ref="itemDao"/>
+   	<constructor-arg  value="1"/>       
+  </bean>
+
+   <bean id="itemDao" class="com.simple.spring.service.dao.ItemDao">
+   
+  </bean>
+  <bean id="accountDao"  class="ocom.simple.spring.service.dao.AccountDao">
+   
+  </bean>
+
+</beans> 
+

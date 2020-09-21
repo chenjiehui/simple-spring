@@ -20,4 +20,9 @@ public interface BeanDefinition {
     String getBeanClassName();
 
     List<PropertyValue> getPropertyValues();
+
+    public ConstructorArgument getConstructorArgument();
+
+    public String getId();
+
 }
