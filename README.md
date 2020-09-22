@@ -1,2 +1,2 @@
 # simple-spring
-Build a simple spring for learning.
+Build a simple spring framework for learning.
