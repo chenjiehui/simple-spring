@@ -1,5 +1,6 @@
 package com.simple.spring.beans.factory.support;
 
+import com.simple.spring.beans.factory.BeanFactory;
 import com.simple.spring.beans.factory.config.RuntimeBeanReference;
 import com.simple.spring.beans.factory.config.TypedStringValue;
 
@@ -8,9 +9,9 @@ import com.simple.spring.beans.factory.config.TypedStringValue;
  */
 public class BeanDefinitionValueResolver {
 
-    private final DefaultBeanFactory beanFactory;
+    private final BeanFactory beanFactory;
 
-    public BeanDefinitionValueResolver(DefaultBeanFactory beanFactory) {
+    public BeanDefinitionValueResolver(BeanFactory beanFactory) {
         this.beanFactory = beanFactory;
     }
 

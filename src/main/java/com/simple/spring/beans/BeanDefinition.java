@@ -25,4 +25,5 @@ public interface BeanDefinition {
 
     public String getId();
 
+    boolean hasConstructorArgumentValues();
 }

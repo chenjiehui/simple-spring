@@ -7,10 +7,10 @@
    	<constructor-arg  value="1"/>       
   </bean>
 
-   <bean id="itemDao" class="com.simple.spring.service.dao.ItemDao">
+   <bean id="itemDao" class="com.simple.spring.dao.ItemDao">
    
   </bean>
-  <bean id="accountDao"  class="ocom.simple.spring.service.dao.AccountDao">
+  <bean id="accountDao"  class="com.simple.spring.dao.AccountDao">
    
   </bean>
 
