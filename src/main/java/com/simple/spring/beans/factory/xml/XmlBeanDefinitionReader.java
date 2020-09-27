@@ -131,7 +131,7 @@ public class XmlBeanDefinitionReader {
 
     }
 
-    public Object parsePropertyValue(Element ele, BeanDefinition bd, String propertyName) {
+    public Object parsePropertyValue(Element ele, BeanDefinition beanDefinition, String propertyName) {
         String elementName = (propertyName != null) ?
                 "<property> element for property '" + propertyName + "'" :
                 "<constructor-arg> element";

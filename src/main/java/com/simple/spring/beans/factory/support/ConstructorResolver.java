@@ -40,7 +40,7 @@ public class ConstructorResolver {
 		}	
 		
 		
-		Constructor<?>[] candidates = beanClass.getConstructors();	
+		Constructor<?>[] candidates = beanClass.getConstructors();
 		
 		
 		BeanDefinitionValueResolver valueResolver =
@@ -49,7 +49,7 @@ public class ConstructorResolver {
 		ConstructorArgument cargs = beanDefinition.getConstructorArgument();
 		SimpleTypeConverter typeConverter = new SimpleTypeConverter();
 		
-		for(int i=0; i<candidates.length;i++){
+		for(int i = 0; i < candidates.length; i++){
 			
 			Class<?> [] parameterTypes = candidates[i].getParameterTypes();
 			if(parameterTypes.length != cargs.getArgumentCount()){
@@ -93,7 +93,7 @@ public class ConstructorResolver {
 			SimpleTypeConverter typeConverter ){
 		
 		
-		for(int i=0;i<parameterTypes.length;i++){
+		for(int i = 0; i < parameterTypes.length; i++){
 			ConstructorArgument.ValueHolder valueHolder 
 				= valueHolders.get(i);
 			//获取参数的值，可能是TypedStringValue, 也可能是RuntimeBeanReference

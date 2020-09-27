@@ -29,15 +29,15 @@ public class BeanFactoryTest  {
     @Test
     public void testGetBean(){
         reader.loadBeanDefinitions(new ClassPathResource("petstore-v1.xml"));
-        BeanDefinition bd = factory.getBeanDefinition("petStore");
+        BeanDefinition beanDefinition = factory.getBeanDefinition("petStore");
 
-        assertTrue(bd.isSingleton());
+        assertTrue(beanDefinition.isSingleton());
 
-        assertFalse(bd.isPrototype());
+        assertFalse(beanDefinition.isPrototype());
 
-        assertEquals(BeanDefinition.SCOPE_DEFAULT, bd.getScope());
+        assertEquals(BeanDefinition.SCOPE_DEFAULT, beanDefinition.getScope());
 
-        assertEquals("com.simple.spring.service.v1.PetStoreService", bd.getBeanClassName());
+        assertEquals("com.simple.spring.service.v1.PetStoreService", beanDefinition.getBeanClassName());
 
         PetStoreService petStore = (PetStoreService) factory.getBean("petStore");
 

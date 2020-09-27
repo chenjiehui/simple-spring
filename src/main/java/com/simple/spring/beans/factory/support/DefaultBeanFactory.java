@@ -27,44 +27,44 @@ public class DefaultBeanFactory extends DefaultSingletonBeanRegistry implements 
         return this.beanDefinitionMap.get(beanId);
     }
 
-    public void registerBeanDefinition(String beanId, BeanDefinition bd) {
-        this.beanDefinitionMap.put(beanId, bd);
+    public void registerBeanDefinition(String beanId, BeanDefinition beanDefinition) {
+        this.beanDefinitionMap.put(beanId, beanDefinition);
     }
 
     public Object getBean(String beanId) {
-        BeanDefinition bd = this.getBeanDefinition(beanId);
-        if (bd == null) {
+        BeanDefinition beanDefinition = this.getBeanDefinition(beanId);
+        if (beanDefinition == null) {
             throw new BeanCreationException("Bean Definiation does not exist");
         }
 
-        if (bd.isSingleton()) {
+        if (beanDefinition.isSingleton()) {
             Object bean = this.getSingleton(beanId);
             if (bean == null) {
-                bean = createBean(bd);
+                bean = createBean(beanDefinition);
                 this.registerSingleton(beanId, bean);
             }
             return bean;
         }
 
-        return createBean(bd);
+        return createBean(beanDefinition);
     }
 
-    public Object createBean(BeanDefinition bd) {
+    public Object createBean(BeanDefinition beanDefinition) {
         //创建实例
-        Object bean = instantiateBean(bd);
+        Object bean = instantiateBean(beanDefinition);
 
         //设置属性
-        populateBean(bd, bean);
+        populateBean(beanDefinition, bean);
         return bean;
     }
 
-    private Object instantiateBean(BeanDefinition bd) {
-        if(bd.hasConstructorArgumentValues()){
+    private Object instantiateBean(BeanDefinition beanDefinition) {
+        if(beanDefinition.hasConstructorArgumentValues()){
             ConstructorResolver resolver = new ConstructorResolver(this);
-            return resolver.autowireConstructor(bd);
+            return resolver.autowireConstructor(beanDefinition);
         }else{
             ClassLoader cl = this.getBeanClassLoader();
-            String beanClassName = bd.getBeanClassName();
+            String beanClassName = beanDefinition.getBeanClassName();
             try {
                 Class<?> clz = cl.loadClass(beanClassName);
                 return clz.newInstance();
@@ -74,8 +74,8 @@ public class DefaultBeanFactory extends DefaultSingletonBeanRegistry implements 
         }
     }
 
-    protected void populateBean(BeanDefinition bd, Object bean){
-        List<PropertyValue> pvs = bd.getPropertyValues();
+    protected void populateBean(BeanDefinition beanDefinition, Object bean){
+        List<PropertyValue> pvs = beanDefinition.getPropertyValues();
 
         if (pvs == null || pvs.isEmpty()) {
             return;
@@ -102,7 +102,7 @@ public class DefaultBeanFactory extends DefaultSingletonBeanRegistry implements 
 
             }
         }catch(Exception ex){
-            throw new BeanCreationException("Failed to obtain BeanInfo for class [" + bd.getBeanClassName() + "]", ex);
+            throw new BeanCreationException("Failed to obtain BeanInfo for class [" + beanDefinition.getBeanClassName() + "]", ex);
         }
     }
 

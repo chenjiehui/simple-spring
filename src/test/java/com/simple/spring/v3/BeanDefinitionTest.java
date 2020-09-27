@@ -26,10 +26,10 @@ public class BeanDefinitionTest {
         Resource resource = new ClassPathResource("petstore-v3.xml");
         reader.loadBeanDefinitions(resource);
 
-        BeanDefinition bd = factory.getBeanDefinition("petStore");
-        Assert.assertEquals("com.simple.spring.service.v3.PetStoreService", bd.getBeanClassName());
+        BeanDefinition beanDefinition = factory.getBeanDefinition("petStore");
+        Assert.assertEquals("com.simple.spring.service.v3.PetStoreService", beanDefinition.getBeanClassName());
 
-        ConstructorArgument args = bd.getConstructorArgument();
+        ConstructorArgument args = beanDefinition.getConstructorArgument();
         List<ValueHolder> valueHolders = args.getArgumentValues();
 
         Assert.assertEquals(3, valueHolders.size());

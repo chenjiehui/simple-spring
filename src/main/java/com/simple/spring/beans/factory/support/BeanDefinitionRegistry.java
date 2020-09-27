@@ -8,5 +8,5 @@ import com.simple.spring.beans.BeanDefinition;
 public interface BeanDefinitionRegistry {
     BeanDefinition getBeanDefinition(String beanId);
 
-    void registerBeanDefinition(String beanId, BeanDefinition bd);
+    void registerBeanDefinition(String beanId, BeanDefinition beanDefinition);
 }
