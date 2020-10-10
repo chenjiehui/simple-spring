@@ -78,17 +78,12 @@ public abstract class ClassUtils {
 		}
 		if (lhsType.isPrimitive()) {
 			Class<?> resolvedPrimitive = wrapperToPrimitiveTypeMap.get(rhsType);
-			if (resolvedPrimitive != null && lhsType.equals(resolvedPrimitive)) {
-				return true;
-			}
+			return resolvedPrimitive != null && lhsType.equals(resolvedPrimitive);
 		}
 		else {
 			Class<?> resolvedWrapper = primitiveTypeToWrapperMap.get(rhsType);
-			if (resolvedWrapper != null && lhsType.isAssignableFrom(resolvedWrapper)) {
-				return true;
-			}
+			return resolvedWrapper != null && lhsType.isAssignableFrom(resolvedWrapper);
 		}
-		return false;
 	}
 
 
