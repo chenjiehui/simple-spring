@@ -6,7 +6,9 @@ import org.springframework.asm.ClassVisitor;
 import org.springframework.asm.Opcodes;
 import org.springframework.asm.SpringAsmInfo;
 
-
+/**
+ * Created by cjh on 2020/10/10.
+ */
 public class ClassMetadataReadingVisitor extends ClassVisitor implements ClassMetadata {
 
 	private String className;

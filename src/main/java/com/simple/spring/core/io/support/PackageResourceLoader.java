@@ -14,6 +14,9 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/**
+ * created by cjh on 2020/9/28.
+ */
 public class PackageResourceLoader {
 
 	private static final Log logger = LogFactory.getLog(PackageResourceLoader.class);
@@ -46,7 +49,7 @@ public class PackageResourceLoader {
 		Resource[] result = new Resource[matchingFiles.size()];
 		int i=0;
 		for (File file : matchingFiles) {
-			result[i++]=new FileSystemResource(file);
+			result[i++] = new FileSystemResource(file);
 		}
 		return result;
 		

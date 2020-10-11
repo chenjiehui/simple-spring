@@ -1,6 +1,8 @@
 package com.simple.spring.core.type;
 
-
+/**
+ * Created by cjh on 2020/10/10.
+ */
 public interface ClassMetadata {
 
 	/**

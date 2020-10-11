@@ -4,6 +4,9 @@ import com.simple.spring.core.annotation.AnnotationAttributes;
 
 import java.util.Set;
 
+/**
+ * Created by cjh on 2020/10/10.
+ */
 public interface AnnotationMetadata extends ClassMetadata{
 	
 	Set<String> getAnnotationTypes();

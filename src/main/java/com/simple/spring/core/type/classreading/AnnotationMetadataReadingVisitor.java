@@ -10,6 +10,9 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Created by cjh on 2020/10/10.
+ */
 public class AnnotationMetadataReadingVisitor extends ClassMetadataReadingVisitor implements AnnotationMetadata {
 	
 	private final Set<String> annotationSet = new LinkedHashSet<String>(4);
