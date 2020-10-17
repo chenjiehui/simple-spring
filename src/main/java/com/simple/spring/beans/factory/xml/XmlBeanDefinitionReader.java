@@ -9,6 +9,7 @@ import com.simple.spring.beans.factory.config.RuntimeBeanReference;
 import com.simple.spring.beans.factory.config.TypedStringValue;
 import com.simple.spring.beans.factory.support.BeanDefinitionRegistry;
 import com.simple.spring.beans.factory.support.GenericBeanDefinition;
+import com.simple.spring.context.annotation.ClassPathBeanDefinitionScanner;
 import com.simple.spring.core.io.Resource;
 import com.simple.spring.utils.ClassUtils;
 import com.simple.spring.utils.StringUtils;
@@ -28,7 +29,7 @@ import java.util.Iterator;
  */
 public class XmlBeanDefinitionReader {
 
-    public static final String ID_ARRIBUTE = "id";
+    public static final String ID_ATTRIBUTE = "id";
 
     public static final String CLASS_ATTRIBUTE = "class";
 
@@ -45,6 +46,12 @@ public class XmlBeanDefinitionReader {
     public static final String CONSTRUCTOR_ARG_ELEMENT = "constructor-arg";
 
     public static final String TYPE_ATTRIBUTE = "type";
+
+    public static final String BEANS_NAMESPACE_URI = "http://www.springframework.org/schema/beans";
+
+    public static final String CONTEXT_NAMESPACE_URI = "http://www.springframework.org/schema/context";
+
+    private static final String BASE_PACKAGE_ATTRIBUTE = "base-package";
 
     BeanDefinitionRegistry registry;
 
@@ -65,15 +72,14 @@ public class XmlBeanDefinitionReader {
             Iterator<Element> iter = root.elementIterator();
             while (iter.hasNext()) {
                 Element element = iter.next();
-                String id = element.attributeValue(ID_ARRIBUTE);
-                String beanClassName = element.attributeValue(CLASS_ATTRIBUTE);
-                BeanDefinition beanDefinition = new GenericBeanDefinition(id, beanClassName);
-                if (element.attributeValue(SCOPE_ATTRIBUTE) != null) {
-                    beanDefinition.setScope(element.attributeValue(SCOPE_ATTRIBUTE));
+                String namespaceUri = element.getNamespaceURI();
+
+                if(this.isDefaultNamespace(namespaceUri)){
+                    parseDefaultElement(element); // 普通的bean
+                } else if(this.isContextNamespace(namespaceUri)){
+                    parseComponentElement(element); // 例如<context:component-scan>
                 }
-                parseConstructorArgElements(element, beanDefinition);
-                parsePropertyElement(element, beanDefinition);
-                this.registry.registerBeanDefinition(id, beanDefinition);
+
             }
         } catch (Exception e) {
             throw new BeanDefinitionStoreException("IOException parsing XML document failed" + resource.getDescription(), e);
@@ -86,6 +92,25 @@ public class XmlBeanDefinitionReader {
                 }
             }
         }
+    }
+
+    private void parseComponentElement(Element ele) {
+        String basePackages = ele.attributeValue(BASE_PACKAGE_ATTRIBUTE);
+        ClassPathBeanDefinitionScanner scanner = new ClassPathBeanDefinitionScanner(registry);
+        scanner.doScan(basePackages);
+
+    }
+    private void parseDefaultElement(Element ele) {
+        String id = ele.attributeValue(ID_ATTRIBUTE);
+        String beanClassName = ele.attributeValue(CLASS_ATTRIBUTE);
+        BeanDefinition bd = new GenericBeanDefinition(id,beanClassName);
+        if (ele.attribute(SCOPE_ATTRIBUTE)!=null) {
+            bd.setScope(ele.attributeValue(SCOPE_ATTRIBUTE));
+        }
+        parseConstructorArgElements(ele,bd);
+        parsePropertyElement(ele,bd);
+        this.registry.registerBeanDefinition(id, bd);
+
     }
 
     public void parseConstructorArgElements(Element beanEle, BeanDefinition beanDefinition) {
@@ -130,6 +155,14 @@ public class XmlBeanDefinitionReader {
         }
 
     }
+
+    public boolean isDefaultNamespace(String namespaceUri) {
+        return (!StringUtils.hasLength(namespaceUri) || BEANS_NAMESPACE_URI.equals(namespaceUri));
+    }
+    public boolean isContextNamespace(String namespaceUri){
+        return (!StringUtils.hasLength(namespaceUri) || CONTEXT_NAMESPACE_URI.equals(namespaceUri));
+    }
+
 
     public Object parsePropertyValue(Element ele, BeanDefinition beanDefinition, String propertyName) {
         String elementName = (propertyName != null) ?
