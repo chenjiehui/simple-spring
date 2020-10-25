@@ -1,5 +1,6 @@
 package com.simple.spring.context.support;
 
+import com.simple.spring.beans.factory.config.DependencyDescriptor;
 import com.simple.spring.core.io.FileSystemResource;
 import com.simple.spring.core.io.Resource;
 
@@ -15,5 +16,9 @@ public class FileSystemXmlApplicationContext extends AbstractApplicationContext 
 
     protected Resource getResourceByPath(String path) {
         return new FileSystemResource(path);
+    }
+
+    public Object resolveDependency(DependencyDescriptor dependencyDescriptor) {
+        return null;
     }
 }

@@ -6,6 +6,7 @@ import com.simple.spring.beans.SimpleTypeConverter;
 import com.simple.spring.beans.factory.BeanCreationException;
 import com.simple.spring.beans.factory.BeanFactory;
 import com.simple.spring.beans.factory.config.ConfigurableBeanFactory;
+import com.simple.spring.beans.factory.config.DependencyDescriptor;
 import com.simple.spring.utils.ClassUtils;
 
 import java.beans.BeanInfo;
@@ -106,13 +107,36 @@ public class DefaultBeanFactory extends DefaultSingletonBeanRegistry implements 
         }
     }
 
-
-
     public void setBeanClassLoader(ClassLoader beanClassLoader) {
         this.beanClassLoader = beanClassLoader;
     }
 
     public ClassLoader getBeanClassLoader() {
         return (this.beanClassLoader != null ? this.beanClassLoader : ClassUtils.getDefaultClassLoader());
+    }
+
+
+    public Object resolveDependency(DependencyDescriptor dependencyDescriptor) {
+        Class<?> typeToMatch = dependencyDescriptor.getDependencyType();
+        for (BeanDefinition beanDefinition : this.beanDefinitionMap.values()) {
+            resolveBeanClass(beanDefinition);
+            Class<?> beanClass = beanDefinition.getBeanClass();
+            if(typeToMatch.isAssignableFrom(beanClass)){
+                return this.getBean(beanDefinition.getId());
+            }
+        }
+        return null;
+    }
+
+    public void resolveBeanClass(BeanDefinition beanDefinition) {
+        if(beanDefinition.hasBeanClass()){
+            return;
+        } else{
+            try {
+                beanDefinition.resolveBeanClass(this.getBeanClassLoader());
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException("can't load class:"+beanDefinition.getBeanClassName());
+            }
+        }
     }
 }
