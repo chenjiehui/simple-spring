@@ -5,13 +5,16 @@ import com.simple.spring.beans.PropertyValue;
 import com.simple.spring.beans.SimpleTypeConverter;
 import com.simple.spring.beans.factory.BeanCreationException;
 import com.simple.spring.beans.factory.BeanFactory;
+import com.simple.spring.beans.factory.config.BeanPostProcessor;
 import com.simple.spring.beans.factory.config.ConfigurableBeanFactory;
 import com.simple.spring.beans.factory.config.DependencyDescriptor;
+import com.simple.spring.beans.factory.config.InstantiationAwareBeanPostProcessor;
 import com.simple.spring.utils.ClassUtils;
 
 import java.beans.BeanInfo;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -23,6 +26,7 @@ public class DefaultBeanFactory extends DefaultSingletonBeanRegistry implements 
 
     private final Map<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<String, BeanDefinition>();
     private ClassLoader beanClassLoader;
+    private List<BeanPostProcessor> beanPostProcessors = new ArrayList<BeanPostProcessor>();
 
     public BeanDefinition getBeanDefinition(String beanId) {
         return this.beanDefinitionMap.get(beanId);
@@ -76,6 +80,12 @@ public class DefaultBeanFactory extends DefaultSingletonBeanRegistry implements 
     }
 
     protected void populateBean(BeanDefinition beanDefinition, Object bean){
+        for(BeanPostProcessor processor : this.getBeanPostProcessors()){
+            if(processor instanceof InstantiationAwareBeanPostProcessor){
+                ((InstantiationAwareBeanPostProcessor)processor).postProcessPropertyValues(bean, beanDefinition.getId());
+            }
+        }
+
         List<PropertyValue> pvs = beanDefinition.getPropertyValues();
 
         if (pvs == null || pvs.isEmpty()) {
@@ -85,14 +95,13 @@ public class DefaultBeanFactory extends DefaultSingletonBeanRegistry implements 
         BeanDefinitionValueResolver valueResolver = new BeanDefinitionValueResolver(this);
         SimpleTypeConverter converter = new SimpleTypeConverter();
         try{
-            BeanInfo beanInfo = Introspector.getBeanInfo(bean.getClass());
-            PropertyDescriptor[] pds = beanInfo.getPropertyDescriptors();
-
             for (PropertyValue pv : pvs){
                 String propertyName = pv.getName();
                 Object originalValue = pv.getValue();
                 Object resolvedValue = valueResolver.resolveValueIfNecessary(originalValue);
 
+                BeanInfo beanInfo = Introspector.getBeanInfo(bean.getClass());
+                PropertyDescriptor[] pds = beanInfo.getPropertyDescriptors();
                 for (PropertyDescriptor pd : pds) {
                     if(pd.getName().equals(propertyName)){
                         Object convertedValue = converter.convertIfNecessary(resolvedValue, pd.getPropertyType());
@@ -100,6 +109,7 @@ public class DefaultBeanFactory extends DefaultSingletonBeanRegistry implements 
                         break;
                     }
                 }
+
 
             }
         }catch(Exception ex){
@@ -115,6 +125,12 @@ public class DefaultBeanFactory extends DefaultSingletonBeanRegistry implements 
         return (this.beanClassLoader != null ? this.beanClassLoader : ClassUtils.getDefaultClassLoader());
     }
 
+    public void addBeanPostProcessor(BeanPostProcessor postProcessor){
+        this.beanPostProcessors.add(postProcessor);
+    }
+    public List<BeanPostProcessor> getBeanPostProcessors() {
+        return this.beanPostProcessors;
+    }
 
     public Object resolveDependency(DependencyDescriptor dependencyDescriptor) {
         Class<?> typeToMatch = dependencyDescriptor.getDependencyType();
